@@ -8,7 +8,7 @@ imports:
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
-    blogger_blog.emails.contact_email: assistant@email.com
+    blogger_blog.emails.contact_email: barabas495@gmail.com
 
 framework:
     #esi: ~
@@ -67,7 +67,7 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
-    
+
 
 services:
     enquire_type_form:

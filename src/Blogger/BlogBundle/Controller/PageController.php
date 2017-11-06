@@ -36,12 +36,15 @@ class PageController extends Controller
             if ($form->isValid()) {
                 $message = \Swift_Message::newInstance()
                     ->setSubject('Contact enquiry from symblog')
-                    ->setFrom('enquiries@symblog.co.uk')
-                    ->setTo($this->container->getParameter('blogger_blog.emails.contact_email'))
+                    ->setFrom('barabas495@gmail.com')
+                    ->setTo('barabas495@gmail.com')
                     ->setBody($this->renderView('BloggerBlogBundle:Page:contactEmail.txt.twig', array('enquiry' => $enquiry)));
 
 
                 $this->get('mailer')->send($message);
+                //var_dump($this->get('mailer')->send($message));die;
+
+
 
                 $this->get('session')->getFlashBag()->add('blogger-notice', 'Your contact enquiry was successfully sent. Thank you!');
 
@@ -50,6 +53,7 @@ class PageController extends Controller
                 return $this->redirect($this->generateUrl('BloggerBlogBundle_contact'));
 
             }
+
 
         }
 
